@@ -29,7 +29,7 @@
 \newcommand*{\supervisor}[1]{\def\@supervisor{#1}} % Supervisor's name
 \newcommand*{\examiner}[1]{\def\@examiner{#1}} % Examiner's name
 %use \date to define the date. It defaults to \today
-\newcommand*{\logo}[1]{\def\@logo{#1}} % University logo. Use it like this: \logo{\includegraphics[scale=0.5]{images/mylogo}}
+\newcommand*{\logo}[1]{\def\@logo{#1}} % University logo. Use it like this: \logo{\includegraphics[scale=0.5]{images/mylogo}}. You will need the graphicx package.
 
 %%% HEADING COMMANDS
 \newcommand*{\authorheading}[1]{\def\@authorheading{#1}} % Heading that precedes author names
@@ -92,12 +92,12 @@
 	%%% DATE
 	{\large \@date}\\[2cm]
 
+	\vfill %ensure that the logo is at the bottom of the page
+
 	%%% LOGO
 	\ifdefined\@logo
-		\@logo\\[1cm] % Include a department/university logo - this will require the graphicx package
+		\@logo % Include a department/university logo - this will require the graphicx package
 	\fi
-
-	\vfill
 \end{titlepage}
 }
 
